@@ -1,0 +1,16 @@
+# Aegis Target Scope
+# Lines starting with # are comments
+# Lines starting with ! are exclusions
+
+# Include these targets
+localhost
+127.0.0.1
+*.vulnweb.com
+testphp.vulnweb.com
+httpbin.org
+
+# Exclude these
+!google.com
+!gstatic.com
+!mozilla.com
+!cloudflare.com

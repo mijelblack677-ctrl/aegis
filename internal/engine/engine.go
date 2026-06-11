@@ -17,6 +17,7 @@ import (
 )
 
 type Engine struct {
+	scope          *ScopeManager
 	modules         []modules.Module
 	report          *output.Report
 	endpointStore   map[string]*modules.RequestResponsePair
@@ -98,6 +99,10 @@ func (e *Engine) statsReporter() {
 }
 
 func (e *Engine) ProcessTransaction(pair *modules.RequestResponsePair) {
+	// Check scope
+	if e.scope != nil && !e.scope.IsInScope(pair.Request.URL.String()) {
+		return
+	}
 	// Skip duplicate URLs for passive scanning
 	hash := e.hashTransaction(pair)
 	e.mu.RLock()
@@ -295,4 +300,12 @@ func (e *Engine) GetDiscoveredEndpoints() []string {
 		endpoints = append(endpoints, k)
 	}
 	return endpoints
+}
+
+func (e *Engine) SetScope(scope *ScopeManager) {
+	e.scope = scope
+}
+
+func (e *Engine) SetRateLimit(delay time.Duration, maxParallel int) {
+	e.rateLimiter.SetRateLimit(delay, maxParallel)
 }

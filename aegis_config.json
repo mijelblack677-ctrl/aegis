@@ -1,0 +1,34 @@
+{
+  "proxy_port": 8080,
+  "output_file": "aegis_report.json",
+  "html_report": "",
+  "wordlist_out": "",
+  "cert_dir": "./aegis-certs",
+  "scope": {
+    "includes": [],
+    "excludes": [
+      "google.com",
+      "gstatic.com",
+      "googleapis.com",
+      "mozilla.com",
+      "cloudflare.com",
+      "facebook.com",
+      "twitter.com",
+      "youtube.com",
+      "cdn.",
+      "static.",
+      "analytics.",
+      "tracking.",
+      "telemetry."
+    ]
+  },
+  "modules": {
+    "enabled": ["all"],
+    "disabled": []
+  },
+  "rate_limit": {
+    "min_delay_ms": 100,
+    "max_parallel": 5
+  },
+  "scan_profile": "balanced"
+}
