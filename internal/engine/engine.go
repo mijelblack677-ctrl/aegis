@@ -11,6 +11,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/mijelblack677-ctrl/aegis/internal/modules"
+	"github.com/mijelblack677-ctrl/aegis/internal/modules/activescan"
 	"github.com/mijelblack677-ctrl/aegis/internal/modules/passivescan"
 	"github.com/mijelblack677-ctrl/aegis/internal/output"
 )
@@ -35,7 +36,7 @@ func NewEngine() *Engine {
 		activeScanQueue: make(chan *modules.RequestResponsePair, 1000),
 	}
 
-	// Register all passive modules
+	// Register PASSIVE modules (run on every request)
 	e.modules = append(e.modules,
 		passivescan.NewSecretFinder(),
 		passivescan.NewGitExposer(),
@@ -44,6 +45,18 @@ func NewEngine() *Engine {
 		passivescan.NewHeaderAnalyzer(),
 		passivescan.NewXSSDetector(),
 		passivescan.NewTechFingerprinter(),
+	)
+
+	// Register ACTIVE modules (run on interesting endpoints)
+	e.modules = append(e.modules,
+		activescan.NewLoginSQLiFuzzer(),
+		activescan.NewAdvancedLoginSQLiFuzzer(),
+		activescan.NewNoSQLiFuzzer(),
+		activescan.NewForbiddenBypasser(),
+		activescan.NewHeaderInjection(),
+		activescan.NewSSRFDetector(),
+		activescan.NewIDORHunter(),
+		activescan.NewCommandInjection(),
 	)
 
 	// Start active scanning workers
@@ -55,7 +68,6 @@ func NewEngine() *Engine {
 }
 
 func (e *Engine) ProcessTransaction(pair *modules.RequestResponsePair) {
-	// Skip duplicate transactions
 	hash := e.hashTransaction(pair)
 	e.mu.RLock()
 	if e.dedupHashes[hash] {
@@ -68,10 +80,9 @@ func (e *Engine) ProcessTransaction(pair *modules.RequestResponsePair) {
 	e.dedupHashes[hash] = true
 	e.mu.Unlock()
 
-	// Store endpoint for pattern analysis
 	e.storeEndpoint(pair)
 
-	// Run passive analysis immediately
+	// Run passive modules immediately
 	e.wg.Add(1)
 	go func(p *modules.RequestResponsePair) {
 		defer e.wg.Done()
@@ -95,12 +106,11 @@ func (e *Engine) ProcessTransaction(pair *modules.RequestResponsePair) {
 		}
 	}(pair)
 
-	// Queue for active scanning if it's an interesting endpoint
+	// Queue active modules for interesting endpoints
 	if e.isInterestingForActiveScan(pair) {
 		select {
 		case e.activeScanQueue <- pair:
 		default:
-			// Queue full, drop
 		}
 	}
 }
@@ -122,6 +132,7 @@ func (e *Engine) activeScanWorker() {
 				e.mu.Lock()
 				e.report.AddVulnerability(v)
 				e.mu.Unlock()
+				log.Printf("[!] %s: %s (%s)", v.Severity.String(), v.Name, v.URL)
 			}
 		}
 	}
@@ -158,6 +169,10 @@ func (e *Engine) isInterestingForActiveScan(pair *modules.RequestResponsePair) b
 		if strings.Contains(ct, "json") || strings.Contains(ct, "xml") {
 			return true
 		}
+	}
+	// Check for 403/401 responses
+	if pair.Response != nil && (pair.Response.StatusCode == 403 || pair.Response.StatusCode == 401) {
+		return true
 	}
 	return false
 }

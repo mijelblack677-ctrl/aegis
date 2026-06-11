@@ -1,0 +1,249 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "cdea2d7a-e360-4278-9d99-36e3a2b6f5de",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:39:22.180935481+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "2bcf1929-e24a-44b7-9c57-193df5872aa8",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:39:22.181029777+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "2135cac8-ec58-42a1-a8d7-8d14ece5c3a1",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:39:22.181071718+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "88fe4958-94b3-4037-9f94-ee9b20328b35",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:39:22.18111234+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "72d527b5-702b-40f3-ab50-712fcba56c03",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:39:22.181148738+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "d049ff4d-750e-439a-b7aa-ef9755dd1e42",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:39:22.181185071+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1eddafb6-13c2-4dee-8517-b28e4d8e7c40",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:42:09.730788834+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "54d09b56-9684-403e-938c-2ef6bf9b9cb4",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:42:09.730832808+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "f84bcef3-915d-4415-a617-ff59def9d792",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:42:09.730850512+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "94b71c5f-22e4-47eb-9ed7-2e50b2713169",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:42:09.730864897+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "d9f3d57b-955a-4ce6-a674-3466fb3922c6",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:42:09.730879009+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7032e1b9-08d6-46df-9a3c-9f71451598e3",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:42:09.730893572+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "86e3f7e7-ddc6-4c72-a6bc-108e242e694b",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: gunicorn/19.9.0",
+      "severity": 0,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: gunicorn/19.9.0"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:42:09.73090652+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "0a11aa5e-f9cd-4fba-ae63-1f4ae2abff0b",
+      "name": "CORS Misconfiguration: Wildcard Origin",
+      "description": "The server allows requests from any origin.",
+      "severity": 3,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Access-Control-Allow-Origin: *"
+      },
+      "remediation": "Restrict allowed origins to trusted domains.",
+      "timestamp": "2026-06-11T09:42:09.730947228+02:00",
+      "tags": [
+        "cors",
+        "misconfiguration"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 14,
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 12,
+    "info": 1
+  }
+}

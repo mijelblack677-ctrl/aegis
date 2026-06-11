@@ -1,0 +1,2844 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "e61f6acf-73bd-4870-bdcc-b3014009bb6e",
+      "name": "Potentially Sensitive File Extension: api.json",
+      "description": "An endpoint with sensitive extension '.json' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: api.json"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:50:17.965429757+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "8575b85f-4555-4038-93d0-49cbaf2d176c",
+      "name": "Potentially Sensitive File Extension: config.json",
+      "description": "An endpoint with sensitive extension '.json' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: config.json"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:50:17.965500296+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "85403ce1-700b-4e7c-b0b6-81c9bdae0901",
+      "name": "Potentially Sensitive File Extension: config.yaml",
+      "description": "An endpoint with sensitive extension '.yaml' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: config.yaml"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:50:17.965542553+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "6421c7fe-3b56-4b98-8eea-44d12a700978",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:17.965679993+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "0b3254d6-038b-439d-8867-157c2f5fcc2a",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:17.96571953+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "cb8af523-703c-41d8-85cf-bcba3eddd656",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:17.965743705+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "11879ec3-2b9d-4036-b07b-b5a7e336cddd",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:17.965780465+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "26eacc82-4386-4e01-a07d-96269db34af8",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:17.965814708+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "5fe28ea6-a43d-4db8-a5d8-7a03dbca4339",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:50:17.965851792+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "a68f4153-7e0e-4bf7-947a-6eaa2fa88d8a",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:50:17.965876168+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "92b32f1c-04ad-4572-919a-f2a9160909e0",
+      "name": "Potentially Sensitive File Extension: http://0.0.0.0:7777/.env",
+      "description": "An endpoint with sensitive extension '.env' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: http://0.0.0.0:7777/.env"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:50:18.123129711+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "53b15560-8809-44ca-b680-5ac723f8465c",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.123230014+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "f7d153bf-d46c-4c74-8aff-27b47cb705bc",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.123246696+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c1e53a18-69fe-4766-b4fc-dc43a2c8e9e3",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.123259355+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "cfd6d8e3-5376-4db7-a40c-320148342cbf",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.123271091+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "cdf7bef4-b679-49aa-a009-5130263c7277",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.123282662+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "eb32901b-03dc-4602-907d-b22656ae1217",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.123294004+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "3f1e33e3-4b03-42bf-92a0-b55f302be146",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:50:18.123307637+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "4f9a0e9c-38d7-4845-92cf-ea665a597b4d",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.126340686+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "19004826-fcc0-445b-a195-157da2df7438",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.126813526+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "5aa7ec39-d479-4fb3-9620-24f467f2eb6c",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.126852406+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "730a832d-f173-4e7e-abbe-62f878fc6763",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.126873484+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "058f7b35-5259-4f8e-8254-2689c71f8453",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.126898614+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "069d1a1f-e131-4396-99ca-471b4303928d",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:18.126924305+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "e75adde9-6a9f-407b-b44a-39d3f65aac57",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:50:18.1269513+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "55aa031e-97ad-49b0-accc-380336fe8e76",
+      "name": "Hardcoded Secret Exposed: Generic API Key",
+      "description": "A secret of type 'Generic API Key' was found in the response body. This could allow an attacker to gain unauthorized access to internal services.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "The secret was found in /app.js: AIzaSyDRqH8kL9mN2pV5..."
+      },
+      "remediation": "Remove the hardcoded secret and use environment variables or a secrets management service.",
+      "timestamp": "2026-06-11T09:50:56.819623909+02:00",
+      "tags": [
+        "secret-exposure",
+        "goldmine",
+        "passive"
+      ]
+    },
+    {
+      "id": "066af4a3-0539-489f-a1a6-0f9c99e5afed",
+      "name": "Hardcoded Secret Exposed: Google API Key",
+      "description": "A secret of type 'Google API Key' was found in the response body. This could allow an attacker to gain unauthorized access to internal services.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "The secret was found in /app.js: AIzaSyDRqH8kL9mN2pV5..."
+      },
+      "remediation": "Remove the hardcoded secret and use environment variables or a secrets management service.",
+      "timestamp": "2026-06-11T09:50:56.819727679+02:00",
+      "tags": [
+        "secret-exposure",
+        "goldmine",
+        "passive"
+      ]
+    },
+    {
+      "id": "ce7b0e4a-277b-4a45-90a6-51aefd1bc249",
+      "name": "Hardcoded Secret Exposed: Generic Secret",
+      "description": "A secret of type 'Generic Secret' was found in the response body. This could allow an attacker to gain unauthorized access to internal services.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "The secret was found in /app.js: AIzaSyDRqH8kL9mN2pV5..."
+      },
+      "remediation": "Remove the hardcoded secret and use environment variables or a secrets management service.",
+      "timestamp": "2026-06-11T09:50:56.819790744+02:00",
+      "tags": [
+        "secret-exposure",
+        "goldmine",
+        "passive"
+      ]
+    },
+    {
+      "id": "3b01c0c1-102c-4de7-b75d-a19fd99c18b7",
+      "name": "Debug/Admin Endpoint Found: http://10.0.1.50:3000/admin/users",
+      "description": "A debug or administrative endpoint was discovered: http://10.0.1.50:3000/admin/users",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Debug endpoint: http://10.0.1.50:3000/admin/users"
+      },
+      "remediation": "Remove debug endpoints from production or protect them with strong authentication.",
+      "timestamp": "2026-06-11T09:50:56.819967641+02:00",
+      "tags": [
+        "debug-endpoint",
+        "exposure"
+      ]
+    },
+    {
+      "id": "1d23f050-5b05-4343-a8d0-62a5bb4251eb",
+      "name": "API Endpoint Discovered: /api/v2/users/",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/v2/users/"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:50:56.820016261+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "c18d4999-5adb-4b0e-bbcd-89e90817f5c6",
+      "name": "API Endpoint Discovered: /api/v2/users/",
+      "description": "An API endpoint matching pattern '/v2/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/v2/users/"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:50:56.820086439+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "f2e2aeaf-8860-47b0-a34e-7ab424b8abe8",
+      "name": "Debug/Admin Endpoint Found: /admin-panel/console.html",
+      "description": "A debug or administrative endpoint was discovered: /admin-panel/console.html",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Debug endpoint: /admin-panel/console.html"
+      },
+      "remediation": "Remove debug endpoints from production or protect them with strong authentication.",
+      "timestamp": "2026-06-11T09:50:56.820117239+02:00",
+      "tags": [
+        "debug-endpoint",
+        "exposure"
+      ]
+    },
+    {
+      "id": "cc4be451-e4fe-46ac-ad67-81265366a206",
+      "name": "Debug/Admin Endpoint Found: /admin-panel/console.html",
+      "description": "A debug or administrative endpoint was discovered: /admin-panel/console.html",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Debug endpoint: /admin-panel/console.html"
+      },
+      "remediation": "Remove debug endpoints from production or protect them with strong authentication.",
+      "timestamp": "2026-06-11T09:50:56.820143149+02:00",
+      "tags": [
+        "debug-endpoint",
+        "exposure"
+      ]
+    },
+    {
+      "id": "1bb03941-cb9d-4fc5-8fab-c1c87c23f9f5",
+      "name": "Potentially Sensitive File Extension: /backups/database_2024-06-01.sql",
+      "description": "An endpoint with sensitive extension '.sql' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: /backups/database_2024-06-01.sql"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:50:56.820171934+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "1843aa08-a276-4a02-8dcb-7e80a5c4f0b9",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:56.820236372+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "973f4da4-1535-4232-8ca1-0aa25419e41a",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:50:56.820259842+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c1f52d3f-48a5-4606-a793-3f82c77b7735",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:56.820291604+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "fe80721f-9a70-4c79-afc3-0095325e1bb6",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:50:56.820320427+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "52bb9822-19ce-480e-a853-2f03f1d061fc",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:56.820372195+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1d496145-01eb-439a-b37c-9bb823f6a017",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:50:56.820398325+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "6835036a-1e10-4da0-8ad2-fe02230a96d2",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:50:56.820427695+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "65eefa92-0492-480d-b4a3-364d211a97da",
+      "name": "Potentially Dangerous JavaScript Function: innerHTML",
+      "description": "The function 'innerHTML' is used in the response. If it handles user input, it could lead to DOM-based XSS.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Found dangerous function: innerHTML"
+      },
+      "remediation": "Avoid using dangerous functions with user input. Use safer alternatives like textContent instead of innerHTML.",
+      "timestamp": "2026-06-11T09:50:56.820548274+02:00",
+      "tags": [
+        "xss",
+        "dom",
+        "dangerous-js"
+      ]
+    },
+    {
+      "id": "3c486029-4822-4ea6-9c46-678f8795670b",
+      "name": "Potentially Dangerous JavaScript Function: document.write(",
+      "description": "The function 'document.write(' is used in the response. If it handles user input, it could lead to DOM-based XSS.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Found dangerous function: document.write("
+      },
+      "remediation": "Avoid using dangerous functions with user input. Use safer alternatives like textContent instead of innerHTML.",
+      "timestamp": "2026-06-11T09:50:56.820620726+02:00",
+      "tags": [
+        "xss",
+        "dom",
+        "dangerous-js"
+      ]
+    },
+    {
+      "id": "dbc2f7e1-331e-4f4b-a481-661a25d34d59",
+      "name": "Potentially Dangerous JavaScript Function: eval(",
+      "description": "The function 'eval(' is used in the response. If it handles user input, it could lead to DOM-based XSS.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Found dangerous function: eval("
+      },
+      "remediation": "Avoid using dangerous functions with user input. Use safer alternatives like textContent instead of innerHTML.",
+      "timestamp": "2026-06-11T09:50:56.820673213+02:00",
+      "tags": [
+        "xss",
+        "dom",
+        "dangerous-js"
+      ]
+    },
+    {
+      "id": "34b2529f-2edb-43d4-af93-c62a9abad47a",
+      "name": "Potential DOM-based XSS via location.hash",
+      "description": "The source 'location.hash' is used in the JavaScript. Combined with 'innerHTML', this could lead to DOM-based XSS.",
+      "severity": 3,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Source: location.hash, Sink: innerHTML"
+      },
+      "remediation": "Sanitize all data from client-side sources before using it in dangerous sinks.",
+      "timestamp": "2026-06-11T09:50:56.82070418+02:00",
+      "tags": [
+        "xss",
+        "dom",
+        "source-sink"
+      ]
+    },
+    {
+      "id": "978d4953-ffdd-4f0e-ae9d-eaa3195a722b",
+      "name": "Potential DOM-based XSS via location.hash",
+      "description": "The source 'location.hash' is used in the JavaScript. Combined with 'document.write(', this could lead to DOM-based XSS.",
+      "severity": 3,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Source: location.hash, Sink: document.write("
+      },
+      "remediation": "Sanitize all data from client-side sources before using it in dangerous sinks.",
+      "timestamp": "2026-06-11T09:50:56.820732194+02:00",
+      "tags": [
+        "xss",
+        "dom",
+        "source-sink"
+      ]
+    },
+    {
+      "id": "96e64d58-d204-4626-9318-f986a585d322",
+      "name": "Potential DOM-based XSS via location.hash",
+      "description": "The source 'location.hash' is used in the JavaScript. Combined with 'eval(', this could lead to DOM-based XSS.",
+      "severity": 3,
+      "url": "http://0.0.0.0:7777/app.js",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Source: location.hash, Sink: eval("
+      },
+      "remediation": "Sanitize all data from client-side sources before using it in dangerous sinks.",
+      "timestamp": "2026-06-11T09:50:56.820765845+02:00",
+      "tags": [
+        "xss",
+        "dom",
+        "source-sink"
+      ]
+    },
+    {
+      "id": "227ac8ff-df0d-4ad0-90c3-42d799d127a7",
+      "name": "API Endpoint Discovered: /api/admin/users",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/admin/users"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:19.673351958+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "cb9cc34b-22f1-4964-81b1-f068e4cfec7a",
+      "name": "Debug/Admin Endpoint Found: /api/admin/users",
+      "description": "A debug or administrative endpoint was discovered: /api/admin/users",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Debug endpoint: /api/admin/users"
+      },
+      "remediation": "Remove debug endpoints from production or protect them with strong authentication.",
+      "timestamp": "2026-06-11T09:51:19.673430241+02:00",
+      "tags": [
+        "debug-endpoint",
+        "exposure"
+      ]
+    },
+    {
+      "id": "a81f7607-a0f8-450e-b08b-81fb96f2914a",
+      "name": "API Endpoint Discovered: /api/debug/logs",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/debug/logs"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:19.673472902+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "ec047bce-4539-4edf-8f55-f70f27b9e7c1",
+      "name": "Debug/Admin Endpoint Found: /api/debug/logs",
+      "description": "A debug or administrative endpoint was discovered: /api/debug/logs",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Debug endpoint: /api/debug/logs"
+      },
+      "remediation": "Remove debug endpoints from production or protect them with strong authentication.",
+      "timestamp": "2026-06-11T09:51:19.673552724+02:00",
+      "tags": [
+        "debug-endpoint",
+        "exposure"
+      ]
+    },
+    {
+      "id": "dc985fa8-2b68-4b2b-8e40-bd76425b6185",
+      "name": "API Endpoint Discovered: /api/auth/login",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/auth/login"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:19.673590603+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "517ad037-70b6-44ac-94d6-32a2772049a3",
+      "name": "API Endpoint Discovered: /api/docs/swagger.json",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/docs/swagger.json"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:19.673631068+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "3b0d8528-a988-4657-a20a-d4751272ead7",
+      "name": "API Endpoint Discovered: /api/docs/swagger.json",
+      "description": "An API endpoint matching pattern '/swagger' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/docs/swagger.json"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:19.67366276+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "1c4e4a0b-6dc8-4d96-8cfc-dc20d1005ebe",
+      "name": "Potentially Sensitive File Extension: /api/docs/swagger.json",
+      "description": "An endpoint with sensitive extension '.json' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: /api/docs/swagger.json"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:51:19.673696393+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "94616037-5167-490d-8c1a-f5f6ea686dde",
+      "name": "Potentially Sensitive File Extension: http://0.0.0.0:7777/api.json",
+      "description": "An endpoint with sensitive extension '.json' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: http://0.0.0.0:7777/api.json"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:51:19.673735394+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "5919c5e0-a604-45e1-9ace-1df8db01b260",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:19.67383305+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "40fbb7e2-b2c6-4ef1-b005-236c799f643b",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:19.67387541+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "0f9e3e46-4502-4909-b8b7-2b2c58bc7b86",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:19.673915333+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "e70b38d8-13c3-41dc-bb0c-237eabbe20dd",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:19.673952747+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "68dcad2d-8c81-48ca-8461-2f7320686092",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:19.673991499+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "84a35889-c297-4826-ba65-06d351e8ec13",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:19.674030368+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c533fe31-3bec-44e6-9699-ab3d1c1c39de",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:19.674068463+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "b61ba3ad-8369-4d91-892a-399986b799fc",
+      "name": "Sensitive File Exposed: .git/HEAD",
+      "description": "The file '.git/HEAD' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.git/HEAD'"
+      },
+      "remediation": "Deny access to '.git/HEAD'.",
+      "timestamp": "2026-06-11T09:51:19.705315785+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "a349d867-ed3b-4106-afec-61910b6750ca",
+      "name": "Sensitive File Exposed: .git/config",
+      "description": "The file '.git/config' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.git/config'"
+      },
+      "remediation": "Deny access to '.git/config'.",
+      "timestamp": "2026-06-11T09:51:19.705321284+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "d7964ba6-dd47-4d39-958a-9fa97a7b1495",
+      "name": "Sensitive File Exposed: .env",
+      "description": "The file '.env' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.env'"
+      },
+      "remediation": "Deny access to '.env'.",
+      "timestamp": "2026-06-11T09:51:19.705329247+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "bc29a131-7ea3-4fbc-8d6e-4def940378aa",
+      "name": "Sensitive File Exposed: config.json",
+      "description": "The file 'config.json' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/config.json'"
+      },
+      "remediation": "Deny access to 'config.json'.",
+      "timestamp": "2026-06-11T09:51:19.705332034+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "8f394c01-3e7d-4513-99fb-7922a3092cf7",
+      "name": "Sensitive File Exposed: config.yaml",
+      "description": "The file 'config.yaml' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/config.yaml'"
+      },
+      "remediation": "Deny access to 'config.yaml'.",
+      "timestamp": "2026-06-11T09:51:19.705334709+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "3d43d73e-ea72-49d3-83c6-218817a2d9b7",
+      "name": "Sensitive File Exposed: Dockerfile",
+      "description": "The file 'Dockerfile' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/Dockerfile",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/Dockerfile'"
+      },
+      "remediation": "Deny access to 'Dockerfile'.",
+      "timestamp": "2026-06-11T09:51:19.705337124+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "816ca420-369b-4d1e-929e-c129ab3d7b65",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.800362857+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "733fb14c-8efe-4a1b-851b-191726be6a92",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.800477674+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "096c0053-3a2e-4e01-8fd5-fe4a72ace7ce",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.800546989+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1d94a8d5-a21c-4f0e-83ea-c34cdc30e2bd",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.800582196+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1ffca1b6-5464-4fb6-8d1a-5d246f4450fa",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.800616628+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "f2baf8ea-b46a-4139-80b1-42eebc475b19",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.800650643+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "498bd79f-ff48-4187-b31c-5a60f2b7339d",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/.git/",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:23.80068156+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "1ff8366c-8610-4c17-b03d-02c6dfb245ea",
+      "name": "Potentially Sensitive File Extension: http://0.0.0.0:7777/.git/.env",
+      "description": "An endpoint with sensitive extension '.env' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: http://0.0.0.0:7777/.git/.env"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:51:23.934359012+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "bba0c70d-fd19-4257-80d7-7b44b24adb54",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.934431979+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "a1fe3f8b-e615-41de-be6f-8430f044e1aa",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.934457277+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "605eed31-6969-486a-b770-c4be99de4ba2",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.934476763+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "21de15c2-745e-4080-853a-671dd7b4aacc",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.934495053+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1689d116-00d2-47c4-8f25-73d0a4e02a58",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.934513042+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "47381a7e-a566-4bfb-bc1b-bd66ced29f7d",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.934530894+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "bb295e4e-d802-4f2b-b9b6-5c71b8286eb1",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/.git/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:23.934548099+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "80c19b56-a55d-4d5c-b21e-cc88a44bf56d",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.937475935+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "bc7fb2b5-220f-4137-b556-4ebc10166d14",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.937509103+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "3b6dc8af-f1e0-460e-9c73-a0d68ff0fcaf",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.937530796+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "8d016bca-b341-4b85-93d8-a53bf6313fc6",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.937546357+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "4655645d-04c6-4c0f-b6ad-395c8c72cee3",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.937559687+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7283db4b-8c7b-42c4-800d-ecf6f9dbb3a6",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:23.937574253+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "91fa0a0c-9ef0-4d31-a1b3-cd64c98888b3",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/.git/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:23.937593045+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "7819b664-1773-413d-b98c-a7e37299f238",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:27.094847717+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "5d8099a2-eda8-44e4-b630-4afce607e9d0",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:27.095006558+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1ef81bc0-dca9-4621-b75d-bb728c68a1b7",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:27.095034617+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c014aaa3-918f-4a06-ba16-e3fb55f596d1",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:27.095054342+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "d420f4b0-dc86-4f89-b8a6-d294514f9815",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:27.095070308+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7f46ad74-7544-4606-99a8-63ebdcabc0b0",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:27.095087068+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "4dd7ebf5-e8d8-43c7-8ad3-ffa24c9ea092",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:27.095105516+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "2218b3ad-cdfd-4e9f-9558-74920d2dd1e8",
+      "name": "Potentially Sensitive File Extension: http://0.0.0.0:7777/config.json",
+      "description": "An endpoint with sensitive extension '.json' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: http://0.0.0.0:7777/config.json"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:51:33.121942929+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "71aa93ea-f7dd-4c9e-9536-6d74abfd4c1c",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:33.122084689+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "0941970a-fada-436d-8623-0531f23a4a11",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:33.122174281+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "bcd7c46d-eff9-4e41-acb3-0cf0213ad366",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:33.122212572+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "6e97a9ab-1624-45e1-a4a6-cf174b6e85dc",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:33.122246519+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "eabf0e78-92fa-4616-97c1-6bc91c6270e3",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:33.122279314+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "3f9c74ed-923c-411e-8edc-3aa83a2b13be",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:33.122314134+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "b9575530-a324-4d5a-b528-9b3d7d5a99f5",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:33.122348786+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "7aab36cb-2c86-4e5b-9031-260c51780470",
+      "name": "Sensitive File Exposed: .git/HEAD",
+      "description": "The file '.git/HEAD' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.git/HEAD'"
+      },
+      "remediation": "Deny access to '.git/HEAD'.",
+      "timestamp": "2026-06-11T09:51:33.161633762+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "846de4f0-f03a-4741-846b-4ca74ecba6c5",
+      "name": "Sensitive File Exposed: .git/config",
+      "description": "The file '.git/config' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.git/config'"
+      },
+      "remediation": "Deny access to '.git/config'.",
+      "timestamp": "2026-06-11T09:51:33.161639875+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "1951fab6-047f-4826-aead-14389c98f074",
+      "name": "Sensitive File Exposed: .env",
+      "description": "The file '.env' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.env'"
+      },
+      "remediation": "Deny access to '.env'.",
+      "timestamp": "2026-06-11T09:51:33.16164339+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "04c43a57-61c7-4e80-bd4f-63af2d9e8716",
+      "name": "Sensitive File Exposed: config.json",
+      "description": "The file 'config.json' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/config.json'"
+      },
+      "remediation": "Deny access to 'config.json'.",
+      "timestamp": "2026-06-11T09:51:33.161646179+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "8d14a393-ea34-4e29-927c-aa08ed77c813",
+      "name": "Sensitive File Exposed: config.yaml",
+      "description": "The file 'config.yaml' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/config.yaml'"
+      },
+      "remediation": "Deny access to 'config.yaml'.",
+      "timestamp": "2026-06-11T09:51:33.161649113+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "134ca846-428c-477e-94ce-59058811683a",
+      "name": "Sensitive File Exposed: Dockerfile",
+      "description": "The file 'Dockerfile' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/Dockerfile",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/Dockerfile'"
+      },
+      "remediation": "Deny access to 'Dockerfile'.",
+      "timestamp": "2026-06-11T09:51:33.161651857+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "2c4669b2-6a28-457d-8b37-34912f367140",
+      "name": "API Endpoint Discovered: /api/auth/login",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: /api/auth/login"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:38.163156195+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "cbd16b25-6d54-4616-b60b-c828e2ee2cba",
+      "name": "Debug/Admin Endpoint Found: /admin/dashboard",
+      "description": "A debug or administrative endpoint was discovered: /admin/dashboard",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Debug endpoint: /admin/dashboard"
+      },
+      "remediation": "Remove debug endpoints from production or protect them with strong authentication.",
+      "timestamp": "2026-06-11T09:51:38.163270747+02:00",
+      "tags": [
+        "debug-endpoint",
+        "exposure"
+      ]
+    },
+    {
+      "id": "9fe5e808-6f1c-4b1e-b2cf-cfe9d1e252b8",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:38.163392152+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "5f6c37da-7bfe-48b3-9d6b-be6b1fb03724",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:38.163427432+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "1a074be4-3854-4987-b3b0-324811307cb1",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:38.163467907+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "02473ce5-9047-4f3e-b228-68efadc94e42",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:38.163509054+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c77e69f1-ca0d-4e32-9d40-72c61ab2dca6",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:38.163573089+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "40065b30-1639-42b3-88ca-31bffbed8c25",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:38.163602731+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7ec46b0f-f2cf-4bc5-8354-3ae942eed5d9",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/login.html",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:38.163627336+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "897345f1-6bde-437e-b4d4-b93cbd2d8e6c",
+      "name": "API Endpoint Discovered: http://0.0.0.0:7777/api/auth/login",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: http://0.0.0.0:7777/api/auth/login"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:46.961595415+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "12c70687-835c-4ab6-928b-34e5c3c19138",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:46.961703393+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "df0a26ab-5134-47f5-b041-deb65e6f68dc",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:46.961741583+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "dbd2809d-7de7-4c66-b5a1-823129077b18",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:46.96176849+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "14eed3c2-22d9-45cf-b30b-1eff41ed92ad",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:46.961792204+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "a159709c-a8d3-452f-b8e8-51ff7f7ef988",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:46.961821485+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "52bbb0fc-918b-4961-8a86-05b44f671764",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:46.961853908+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "276f85c9-8a99-445b-a68c-84ca2fe949c8",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api/auth/login",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:46.961877161+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "38355d08-33f2-4f87-9563-3ed66395d866",
+      "name": "Sensitive File Exposed: .git/HEAD",
+      "description": "The file '.git/HEAD' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.git/HEAD",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.git/HEAD'"
+      },
+      "remediation": "Deny access to '.git/HEAD'.",
+      "timestamp": "2026-06-11T09:51:46.996459649+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "cfaefea8-d5ba-4cd8-86db-90648c8110c0",
+      "name": "Sensitive File Exposed: .git/config",
+      "description": "The file '.git/config' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.git/config",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.git/config'"
+      },
+      "remediation": "Deny access to '.git/config'.",
+      "timestamp": "2026-06-11T09:51:46.99646701+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "25113cb7-7f6d-4989-bab1-c457dec755f8",
+      "name": "Sensitive File Exposed: .env",
+      "description": "The file '.env' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/.env",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/.env'"
+      },
+      "remediation": "Deny access to '.env'.",
+      "timestamp": "2026-06-11T09:51:46.996470645+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "c791805b-1624-4c6e-bac1-01d90bb022ef",
+      "name": "Sensitive File Exposed: config.json",
+      "description": "The file 'config.json' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/config.json",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/config.json'"
+      },
+      "remediation": "Deny access to 'config.json'.",
+      "timestamp": "2026-06-11T09:51:46.996473936+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "9623ec8f-d080-417a-a0f1-7f97dcb84c1b",
+      "name": "Sensitive File Exposed: config.yaml",
+      "description": "The file 'config.yaml' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/config.yaml'"
+      },
+      "remediation": "Deny access to 'config.yaml'.",
+      "timestamp": "2026-06-11T09:51:46.996477235+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "b09616ce-85a2-4ce9-846b-030c62856b8d",
+      "name": "Sensitive File Exposed: Dockerfile",
+      "description": "The file 'Dockerfile' is accessible.",
+      "severity": 4,
+      "url": "http://0.0.0.0:7777/Dockerfile",
+      "method": "GET",
+      "evidence": {
+        "proof_of_concept": "curl 'http://0.0.0.0:7777/Dockerfile'"
+      },
+      "remediation": "Deny access to 'Dockerfile'.",
+      "timestamp": "2026-06-11T09:51:46.996480588+02:00",
+      "tags": [
+        "sensitive-file-exposure",
+        "goldmine"
+      ]
+    },
+    {
+      "id": "d69af945-76c9-41ed-8fb4-8d1010c93375",
+      "name": "API Endpoint Discovered: http://0.0.0.0:7777/api/auth/.env",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: http://0.0.0.0:7777/api/auth/.env"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:47.101628559+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "6daca83d-1475-4292-af26-1c36b5d1f778",
+      "name": "Potentially Sensitive File Extension: http://0.0.0.0:7777/api/auth/.env",
+      "description": "An endpoint with sensitive extension '.env' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: http://0.0.0.0:7777/api/auth/.env"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:51:47.101674761+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "373e6c56-0871-45ad-9719-d868aa6d2f35",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.10172033+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "59ee55cf-7620-4943-abb8-ed293e069155",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.10173445+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "207f293b-618b-49ba-9be7-2b983849cbef",
+      "name": "API Endpoint Discovered: http://0.0.0.0:7777/api/auth/.git/config",
+      "description": "An API endpoint matching pattern '/api/' was discovered. This may expose sensitive functionality.",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Discovered endpoint: http://0.0.0.0:7777/api/auth/.git/config"
+      },
+      "remediation": "Ensure API endpoints are properly authenticated and authorized.",
+      "timestamp": "2026-06-11T09:51:47.101735481+02:00",
+      "tags": [
+        "api-endpoint",
+        "discovery"
+      ]
+    },
+    {
+      "id": "42cd3e17-2116-4ff3-b08c-1fe6bd6d458d",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101747212+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7f9f953b-5ed9-4d2f-b472-40562a3e272e",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101760128+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "2bc396ad-39c0-49aa-a21f-0cf3d241728c",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101774576+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "ca26684c-7f92-4980-a0cf-a44f64e71470",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.10178727+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "d6c5ebb3-5ed2-4619-a41a-6ff4532816c2",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101798208+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7eb3a307-38a7-492f-8ed2-caba1ad58b63",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api/auth/.env",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:47.101802062+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "9f11c78f-f29e-47e8-a4ca-3fe82c0a6bf5",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101823011+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "72a8eb47-7736-42b7-8e12-521fe89d0839",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.1018408+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "6ee5d968-d0ef-4acc-9e36-df0b704b4cdb",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101854949+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "6b526d38-a847-4605-9106-b61730772575",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101868206+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "e0d140b0-96cb-45d5-a5b4-9f8ed89df311",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:47.101881371+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "5ed799d0-d723-4a06-b476-356c1906659d",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/api/auth/.git/config",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:47.101894404+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "c9c98ab4-fc2e-45c3-98d6-9721f4bc48a2",
+      "name": "Potentially Sensitive File Extension: http://0.0.0.0:7777/config.yaml",
+      "description": "An endpoint with sensitive extension '.yaml' was found.",
+      "severity": 2,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Sensitive extension: http://0.0.0.0:7777/config.yaml"
+      },
+      "remediation": "Remove or protect files with sensitive extensions from public access.",
+      "timestamp": "2026-06-11T09:51:52.835703266+02:00",
+      "tags": [
+        "sensitive-file",
+        "discovery"
+      ]
+    },
+    {
+      "id": "f2cefec5-a1a6-4354-af08-90c2da5f4acc",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:52.835861584+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c3763a67-9c95-4687-bd4e-081c73f0e313",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:52.83589775+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "691e8a76-e080-4e9a-928f-d37565923077",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:51:52.835925199+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "66cee07d-019c-480d-b5b7-c4cbf058f6cf",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:52.835952856+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "0b23d318-a7bd-4f4e-ac32-d6f2ba930c0e",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:51:52.835979574+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "8394216a-a64b-4b40-b75d-e2bd0bbdd0ef",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:51:52.836005954+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "6267b062-dfa1-41f3-9889-c3d7875ee33c",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: SimpleHTTP/0.6 Python/3.13.4",
+      "severity": 0,
+      "url": "http://0.0.0.0:7777/config.yaml",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: SimpleHTTP/0.6 Python/3.13.4"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:51:52.8360336+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "f57c451f-71b7-4fb9-94b5-0ccd7aa3ef33",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:52:17.563898137+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "c9b0d8b3-46a2-45dd-84ca-a72d8d827c4b",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:52:17.563977559+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "54b7f1a6-c9e3-4ba6-b3f4-4c1afe6b8575",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:52:17.564009041+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "7a30b07b-f28d-41d0-b93c-90980cf52442",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:52:17.564049262+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "bf03b5de-f49f-4324-9ee6-396557ed3bbe",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:52:17.564088788+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "5f96a802-704e-443d-863b-9ac9064a6af2",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: Tengine",
+      "severity": 0,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: Tengine"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:52:17.564131129+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "608c93a6-a712-460e-8076-41401c62d10a",
+      "name": "CORS Misconfiguration: Wildcard Origin",
+      "description": "The server allows requests from any origin.",
+      "severity": 3,
+      "url": "https://gator.volces.com:443/list",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Access-Control-Allow-Origin: *"
+      },
+      "remediation": "Restrict allowed origins to trusted domains.",
+      "timestamp": "2026-06-11T09:52:17.564171281+02:00",
+      "tags": [
+        "cors",
+        "misconfiguration"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 167,
+    "critical": 21,
+    "high": 4,
+    "medium": 20,
+    "low": 95,
+    "info": 27
+  }
+}
