@@ -71,6 +71,6 @@ func main() {
 		log.Fatalf("[-] Failed to save report: %v", err)
 	}
 	
-	fmt.Println(report.Summary())
+	fmt.Println(report.PrintSummary())
 	log.Printf("[+] Report saved to %s", *outputFile)
 }

@@ -1,9 +1,7 @@
 module github.com/mijelblack677-ctrl/aegis
 
-go 1.21
+go 1.23.0
 
-require (
-	github.com/google/uuid v1.5.0
-	github.com/elazarl/goproxy v1.2.3
-	golang.org/x/net v0.19.0
-)
+toolchain go1.23.5
+
+require github.com/google/uuid v1.6.0

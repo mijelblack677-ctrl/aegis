@@ -2,7 +2,6 @@ package passivescan
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/mijelblack677-ctrl/aegis/internal/modules"
 	"github.com/mijelblack677-ctrl/aegis/internal/output"

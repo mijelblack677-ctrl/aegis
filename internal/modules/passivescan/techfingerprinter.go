@@ -1,6 +1,7 @@
 package passivescan
 
 import (
+	"net/http"
 	"fmt"
 	"regexp"
 	"strings"
