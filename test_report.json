@@ -1,0 +1,147 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "e6ee9419-d3b8-4797-b511-f24a997b0ec9",
+      "name": "Missing Security Header: X-Frame-Options",
+      "description": "Protects against clickjacking attacks",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Frame-Options not present"
+      },
+      "remediation": "Add the X-Frame-Options header to all responses.",
+      "timestamp": "2026-06-11T09:17:28.810055536+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "df4545de-18bf-4233-9c00-80ddf94935f7",
+      "name": "Missing Security Header: X-Content-Type-Options",
+      "description": "Prevents MIME type sniffing",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header X-Content-Type-Options not present"
+      },
+      "remediation": "Add the X-Content-Type-Options header to all responses.",
+      "timestamp": "2026-06-11T09:17:28.810164926+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "4b383c4d-3167-483d-bacd-893822f8ec87",
+      "name": "Missing Security Header: Content-Security-Policy",
+      "description": "Mitigates XSS and data injection attacks",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Content-Security-Policy not present"
+      },
+      "remediation": "Add the Content-Security-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:17:28.810213848+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "3daee71d-4d29-429b-99dc-035410599e9c",
+      "name": "Missing Security Header: Strict-Transport-Security",
+      "description": "Enforces HTTPS connections",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Strict-Transport-Security not present"
+      },
+      "remediation": "Add the Strict-Transport-Security header to all responses.",
+      "timestamp": "2026-06-11T09:17:28.810257447+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "17b5a3e0-f32b-45c2-90eb-0a788da938e6",
+      "name": "Missing Security Header: Referrer-Policy",
+      "description": "Controls referrer information",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Referrer-Policy not present"
+      },
+      "remediation": "Add the Referrer-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:17:28.810405675+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "0cbb6487-3c7e-4329-89cb-e692bd3e9e57",
+      "name": "Missing Security Header: Permissions-Policy",
+      "description": "Controls browser features",
+      "severity": 1,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Header Permissions-Policy not present"
+      },
+      "remediation": "Add the Permissions-Policy header to all responses.",
+      "timestamp": "2026-06-11T09:17:28.810456481+02:00",
+      "tags": [
+        "security-headers",
+        "missing-header"
+      ]
+    },
+    {
+      "id": "00f46c29-5abd-435a-b6b4-97bf282c6893",
+      "name": "Server Information Disclosure",
+      "description": "Server reveals: gunicorn/19.9.0",
+      "severity": 0,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Server: gunicorn/19.9.0"
+      },
+      "remediation": "Remove or obfuscate the Server header.",
+      "timestamp": "2026-06-11T09:17:28.810494734+02:00",
+      "tags": [
+        "information-disclosure"
+      ]
+    },
+    {
+      "id": "4e831ba8-6dd0-4835-8bb1-4d8639f5ac85",
+      "name": "CORS Misconfiguration: Wildcard Origin",
+      "description": "The server allows requests from any origin.",
+      "severity": 3,
+      "url": "http://httpbin.org/get",
+      "method": "",
+      "evidence": {
+        "proof_of_concept": "Access-Control-Allow-Origin: *"
+      },
+      "remediation": "Restrict allowed origins to trusted domains.",
+      "timestamp": "2026-06-11T09:17:28.810531959+02:00",
+      "tags": [
+        "cors",
+        "misconfiguration"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 6,
+    "info": 1
+  }
+}

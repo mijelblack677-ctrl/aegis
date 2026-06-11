@@ -10,7 +10,7 @@ import (
 
 type Report struct {
 	Vulnerabilities []*Vulnerability `json:"vulnerabilities"`
-	SummaryData     ReportSummary    `json:"summary"`
+	Summary         ReportSummary    `json:"summary"`
 	mu              sync.Mutex
 }
 
@@ -33,7 +33,7 @@ func (r *Report) AddVulnerability(v *Vulnerability) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	r.Vulnerabilities = append(r.Vulnerabilities, v)
-	r.updateSummary()
+	r.updateSummaryData()
 }
 
 func (r *Report) AddVulnerabilities(vulns ...*Vulnerability) {
@@ -42,21 +42,21 @@ func (r *Report) AddVulnerabilities(vulns ...*Vulnerability) {
 	}
 }
 
-func (r *Report) updateSummary() {
-	r.SummaryData = ReportSummary{}
-	r.SummaryData.Total = len(r.Vulnerabilities)
+func (r *Report) updateSummaryData() {
+	r.Summary = ReportSummary{}
+	r.Summary.Total = len(r.Vulnerabilities)
 	for _, v := range r.Vulnerabilities {
 		switch v.Severity {
 		case SeverityCritical:
-			r.SummaryData.Critical++
+			r.Summary.Critical++
 		case SeverityHigh:
-			r.SummaryData.High++
+			r.Summary.High++
 		case SeverityMedium:
-			r.SummaryData.Medium++
+			r.Summary.Medium++
 		case SeverityLow:
-			r.SummaryData.Low++
+			r.Summary.Low++
 		case SeverityInfo:
-			r.SummaryData.Info++
+			r.Summary.Info++
 		}
 	}
 }
@@ -66,12 +66,12 @@ func (r *Report) PrintSummary() string {
 	sb.WriteString("\n" + strings.Repeat("=", 60) + "\n")
 	sb.WriteString("  AEGIS - VULNERABILITY SCAN SUMMARY\n")
 	sb.WriteString(strings.Repeat("=", 60) + "\n")
-	sb.WriteString(fmt.Sprintf("  Total Findings: %d\n", r.SummaryData.Total))
+	sb.WriteString(fmt.Sprintf("  Total Findings: %d\n", r.Summary.Total))
 	sb.WriteString(fmt.Sprintf("  Critical: %d | High: %d | Medium: %d | Low: %d | Info: %d\n",
-		r.SummaryData.Critical, r.SummaryData.High, r.SummaryData.Medium, r.SummaryData.Low, r.SummaryData.Info))
+		r.Summary.Critical, r.Summary.High, r.Summary.Medium, r.Summary.Low, r.Summary.Info))
 	sb.WriteString(strings.Repeat("=", 60) + "\n")
 
-	if r.SummaryData.Critical > 0 || r.SummaryData.High > 0 {
+	if r.Summary.Critical > 0 || r.Summary.High > 0 {
 		sb.WriteString("\n  CRITICAL & HIGH FINDINGS:\n")
 		for _, v := range r.Vulnerabilities {
 			if v.Severity == SeverityCritical || v.Severity == SeverityHigh {

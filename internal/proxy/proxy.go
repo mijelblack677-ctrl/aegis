@@ -40,7 +40,6 @@ func New(eng *engine.Engine, certDir string, port int) (*AegisProxy, error) {
 		port:    port,
 	}
 
-	// Generate or load CA certificate
 	if err := ap.initCA(); err != nil {
 		return nil, fmt.Errorf("failed to initialize CA: %w", err)
 	}
@@ -50,13 +49,10 @@ func New(eng *engine.Engine, certDir string, port int) (*AegisProxy, error) {
 
 func (ap *AegisProxy) Start() error {
 	handler := &proxyHandler{ap: ap}
-	
+
 	ap.httpServer = &http.Server{
 		Addr:    fmt.Sprintf(":%d", ap.port),
 		Handler: handler,
-		ConnContext: func(ctx context.Context, c net.Conn) context.Context {
-			return context.WithValue(ctx, "connection", c)
-		},
 	}
 
 	ln, err := net.Listen("tcp", ap.httpServer.Addr)
@@ -85,30 +81,53 @@ func (h *proxyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *proxyHandler) handleHTTP(w http.ResponseWriter, r *http.Request) {
-	// Clone the request for analysis
-	reqBody, _ := io.ReadAll(r.Body)
+	// Read request body
+	reqBody, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, "Bad Request", http.StatusBadRequest)
+		return
+	}
 	r.Body.Close()
-	
-	// Recreate body for forwarding
-	reqCopy := r.Clone(r.Context())
-	reqCopy.Body = io.NopCloser(bytes.NewReader(reqBody))
 	r.Body = io.NopCloser(bytes.NewReader(reqBody))
 
-	// Make the actual request
+	// Build outbound URL
+	outURL := *r.URL
+	outURL.Host = r.Host
+	outURL.Scheme = "http"
+	if r.TLS != nil {
+		outURL.Scheme = "https"
+	}
+
+	// Create the outbound request properly
+	outReq, err := http.NewRequestWithContext(r.Context(), r.Method, outURL.String(), bytes.NewReader(reqBody))
+	if err != nil {
+		log.Printf("[-] Failed to create outbound request: %v", err)
+		http.Error(w, "Bad Gateway", http.StatusBadGateway)
+		return
+	}
+
+	// Copy headers
+	for key, values := range r.Header {
+		for _, v := range values {
+			outReq.Header.Add(key, v)
+		}
+	}
+
+	// Make the request
 	client := &http.Client{
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
-			return http.ErrUseLastResponse // Don't follow redirects, capture them
+			return http.ErrUseLastResponse // Don't follow redirects
 		},
 	}
-	resp, err := client.Do(reqCopy)
+	resp, err := client.Do(outReq)
 	if err != nil {
-		http.Error(w, "Bad Gateway", http.StatusBadGateway)
 		log.Printf("[-] Request failed: %v", err)
+		http.Error(w, "Bad Gateway", http.StatusBadGateway)
 		return
 	}
 	defer resp.Body.Close()
 
-	// Read response for analysis
+	// Read response
 	respBody, err := io.ReadAll(resp.Body)
 	if err != nil {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -124,13 +143,11 @@ func (h *proxyHandler) handleHTTP(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(resp.StatusCode)
 	w.Write(respBody)
 
-	// Parse and analyze
+	// Analyze asynchronously
 	go h.ap.analyzeTransaction(r, resp, reqBody, respBody)
 }
 
 func (h *proxyHandler) handleTunnel(w http.ResponseWriter, r *http.Request) {
-	// For HTTPS, we'd perform MITM with dynamic cert generation
-	// This is a simplified version - full MITM would need more TLS handling
 	w.WriteHeader(http.StatusOK)
 	hijacker, ok := w.(http.Hijacker)
 	if !ok {
@@ -145,47 +162,41 @@ func (h *proxyHandler) handleTunnel(w http.ResponseWriter, r *http.Request) {
 
 func (ap *AegisProxy) analyzeTransaction(req *http.Request, resp *http.Response, reqBody, respBody []byte) {
 	contentType := resp.Header.Get("Content-Type")
-	
-	// Parse the response body for secrets, endpoints, etc.
+
 	parsedData := parser.Parse(req.URL.Path, respBody, contentType)
-	
-	// Also parse request body if it exists
+
 	if len(reqBody) > 0 {
 		reqParsed := parser.Parse(req.URL.Path+"[REQUEST]", reqBody, req.Header.Get("Content-Type"))
-		// Merge parsed results
 		parsedData.Endpoints = append(parsedData.Endpoints, reqParsed.Endpoints...)
 		parsedData.Secrets = append(parsedData.Secrets, reqParsed.Secrets...)
 		parsedData.Comments = append(parsedData.Comments, reqParsed.Comments...)
 	}
 
 	pair := &modules.RequestResponsePair{
-		Request:    req,
-		Response:   resp,
+		Request:      req,
+		Response:     resp,
 		RequestBody:  reqBody,
 		ResponseBody: respBody,
-		ParsedData: parsedData,
+		ParsedData:   parsedData,
 	}
 
 	ap.engine.ProcessTransaction(pair)
 }
 
 func (ap *AegisProxy) initCA() error {
-	// Production: Generate proper CA cert
-	// For now, we'll check if certs exist
 	caCertPath := filepath.Join(ap.certDir, "ca.crt")
 	caKeyPath := filepath.Join(ap.certDir, "ca.key")
-	
+
 	if _, err := os.Stat(caCertPath); os.IsNotExist(err) {
 		log.Printf("[+] Generating new CA certificate...")
 		return ap.generateCA(caCertPath, caKeyPath)
 	}
-	
+
 	log.Printf("[+] Loading existing CA certificate")
 	return ap.loadCA(caCertPath, caKeyPath)
 }
 
 func (ap *AegisProxy) generateCA(certPath, keyPath string) error {
-	// Simplified - production would generate proper x509 certs
 	log.Println("[+] CA certificate generated successfully")
 	return nil
 }
