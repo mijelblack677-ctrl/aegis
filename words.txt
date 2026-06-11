@@ -1,0 +1,15 @@
+
+=== Endpoint Pattern Analysis ===
+Detected URL patterns:
+  {NUMERIC_ID} (found 1 times)
+
+Suggested wordlist entries:
+  http:
+  localhost:7777
+  api
+  auth
+  .git
+  v2
+  users
+  login
+  HEAD
